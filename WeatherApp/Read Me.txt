@@ -1,0 +1,14 @@
+This Project is a weatherApp.
+'openweathermap api' has been used.
+For now other than showing main weather condition in the homepage and 7-Day Forecast,other features have not been updated.
+Other Features inlcude-----> 
+Settings--- where there are options to change temparature, air pressure and wind speed units.
+	--- About us portion
+	--- Feed back portion where there is supposed to be options for giving ratings.
+AddLocation (with a '+' sign)----- There is option for searching where 7-Day Forecast is shown if
+				   only coordiantes of a place is pasted in the format(latitude,longitude).
+			     ----- Searching by name is yet to be applied. And only few places in Dhaka city are shown 
+				   in list. 7-Day Forecast is shown by tapping them.
+N.B The app is built with complete react native. And most importantly, it has been developed based on mi Weather app.
+ 			  
+				
