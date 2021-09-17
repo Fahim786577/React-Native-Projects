@@ -1,9 +1,9 @@
 import React ,{useState,useEffect}from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator,StyleSheet, Text, View ,Image} from 'react-native';
 import * as Location from 'expo-location';
 import ForecastDetails from './ForecastDetails';
 
-const APIKEY = 'cc4448d18673eec19b61be77f9a255f6';
+//const APIKEY = 'cc4448d18673eec19b61be77f9a255f6';
 const API_KEY = 'aedd18b65cdecda2bc00290577ebcc8f';
 const OneCall = 'https://api.openweathermap.org/data/2.5/onecall?'
 
@@ -12,7 +12,7 @@ export default function WeatherData (){
   const [Locations,setLocations] = useState({});
   const [currentWeather, setCurrentWeather] = useState(null);
   const [unitsSystem, setUnitsSystem] = useState('metric');
-  
+  const [timeout, settimeout] = useState(0);  
   useEffect(()=>{
     load()
   },[unitsSystem]);
@@ -49,6 +49,8 @@ export default function WeatherData (){
     
   };
 
+  //let indicator = <ActivityIndicator size="large" color="#0000ff" />
+  
   if (currentWeather){
       return (
         <View style={styles.container}>
@@ -56,13 +58,25 @@ export default function WeatherData (){
         </View>
       )
   }else{
-      return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
-      )
+      setTimeout(() => {
+        settimeout(1)
+      }, 20000)
+      if (timeout <1){
+        return (
+          <View style={styles.container}>
+            <ActivityIndicator size="large" color="#0000ff" />
+          </View>
+        )
+      }else{
+        return (
+          <View style={styles.container}>
+            <Image style= {{width:100,height:110}} source = {require('../assets/no-connection.png')}/>
+            <Text>Sorry no connection....</Text>
+          </View>
+        )
+      }
+      
   }
-
 }
 
 const styles = StyleSheet.create({

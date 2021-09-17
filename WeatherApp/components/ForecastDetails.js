@@ -199,6 +199,14 @@ export default function ForecastDetails({currentWeather,currentLocation}){
                         
                 </>
                 }      
+                ListFooterComponent = {
+                    <>
+                        <View style = {{flexDirection:'row',alignItems:'center',width:'100%',paddingLeft:80,marginTop:-8,paddingBottom:10}}>
+                            <Text style = {{fontSize:13,color:'#fff'}}>Data provided by     </Text>
+                            <Image style = {{width:80,height:35}} source = {require('../assets/openWeatherAssetlogo2.png')}/> 
+                        </View>
+                    </>
+                }
             />    
         </View>
     );
