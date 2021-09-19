@@ -1,0 +1,5 @@
+A Simple Book App built with react native.
+Only the interface has been developed up until now.Features like searching,Downloading and More books are yet to be added.
+
+
+N.B The app has been developed based in Freebooks App.
